@@ -1,10 +1,17 @@
 require('dotenv').config();
 const express = require('express');
+const {graphqlHTTP} = require('express-graphql');
+const schema = require('./schema/schema');
 const app = express();
 
 app.get('/',(req,res)=>{
     res.send('Starting Project Management Project with Graphql');
 });
+
+app.use('/graphql',graphqlHTTP({
+    schema,
+    graphiql: true
+}))
 
 const PORT = 2525;
 const start = ()=>{
