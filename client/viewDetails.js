@@ -1,12 +1,15 @@
 import singleProject from "./fetchData/singleProject.js";
 import singleClient from "./fetchData/singleClient.js";
+import updateProject from "./mutateData/updateProject.js";
 
 const titleInput = document.querySelector('.title');
 const descriptionInput = document.querySelector('.description');
 const statusInput = document.querySelector('.status');
 const client = document.querySelector('.clientDetails');
 const title = document.querySelector('#projectInputName');
-const desc = document.querySelector('#projectTextarea1')
+const desc = document.querySelector('#projectTextarea1');
+const status = document.querySelector('.status-select');
+const updateBtn = document.querySelector('.updatebtn');
 
 let query = location.href.split('?')[1];
 let id = query.split('=')[1];
@@ -34,9 +37,21 @@ const start = async()=>{
     </table>`;
     client.appendChild(table);
 
-    title.setAttribute('placeholder',`${projectDetails.name}`);
-    desc.setAttribute('placeholder',`${projectDetails.description}`);
-
+    title.setAttribute('value',`${projectDetails.name}`);
+    desc.textContent = `${projectDetails.description}`;
+    const option = document.createElement('option');
+    option.setAttribute('selected','selected');
+    option.textContent = `${projectDetails.status}`;
+    status.prepend(option) 
 }
+
+updateBtn.addEventListener('click',async (e)=>{
+    e.preventDefault();
+    const updatedProject = await updateProject(id,title.value,desc.value,status.value);
+    alert('Project Details Updated');
+    location.reload();
+})
 start();
+
+
 
