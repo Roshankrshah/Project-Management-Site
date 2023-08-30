@@ -59,3 +59,36 @@
 .delete-button:hover {
     background-color: #c0392b;
 }
+
+.content-container {
+    margin: 10px 100px 10px 100px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.action-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 8px 12px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Add a hover effect for the button */
+.action-button:hover {
+    background-color: #2980b9;
+}
+
+.deleteProject{
+    position: absolute;
+    top: 400px;
+    right: 10px;
+}
