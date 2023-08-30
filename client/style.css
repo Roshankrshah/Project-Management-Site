@@ -87,8 +87,13 @@
     background-color: #2980b9;
 }
 
-.deleteProject{
+.deleteProject {
     position: absolute;
     top: 400px;
     right: 10px;
+}
+
+.client-table {
+    border-collapse: collapse;
+    width: 300px;
 }

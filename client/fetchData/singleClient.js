@@ -1,15 +1,12 @@
-const singleProject = async (id) => {
+const singleClient = async (id) => {
     const requestBody = {
         query: `
-        query SeeProject($id: ID!){
-            project(id: $id){
+        query SeeClient($id: ID!){
+            client(id: $id){
                 name
-                status
-                description
-                client{
-                    id
-                  }
-              }
+                phone
+                email
+            }
         }`,
         variables: {
             id: id
@@ -28,7 +25,7 @@ const singleProject = async (id) => {
         }
         const resData = await response.json();
         console.log(resData)
-        return resData.data.project;
+        return resData.data.client;
 
     } catch (err) {
         console.log(err);
@@ -36,4 +33,4 @@ const singleProject = async (id) => {
     }
 };
 
-export default singleProject;
+export default singleClient;
