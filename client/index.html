@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Project MGMT</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
@@ -21,6 +21,88 @@
             </button>
         </div>
     </nav>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary add-btn" data-bs-toggle="modal" data-bs-target="#clientModal">
+        Add Client
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="clientModal" tabindex="-1" aria-labelledby="clientModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="clientModalLabel">Add Client</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="clientInputName" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="clientInputName">
+                        </div>
+                        <div class="mb-3">
+                            <label for="clientInputEmail" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="clientInputEmail" aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="clientInputPhone" class="form-label">Phone</label>
+                            <input type="text" class="form-control" id="clientInputPhone">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#projectModal">
+        Add Project
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">New Project</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="projectInputName" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="projectInputName">
+                        </div>
+                        <div class="mb-3">
+                            <label for="projectTextarea1" class="form-label">Description</label>
+                            <textarea class="form-control" id="projectTextarea1" rows="3"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="projectStatus" class="form-label">Status</label>
+                            <select class="form-select" aria-label="Default select example">
+                               <!-- <option selected>Open this select menu</option>-->
+                                <option value="1">Not Started</option>
+                                <option value="2">In Progress</option>
+                                <option value="3">Completed</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="projectClient" class="form-label">Client</label>
+                            <select class="form-select" aria-label="Default select example">
+                               <!-- <option selected>Open this select menu</option>-->
+                                <option value="1">Not Started</option>
+                                <option value="2">In Progress</option>
+                                <option value="3">Completed</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
