@@ -2,6 +2,7 @@ let requestBody = {
     query: `
         query{
             projects{
+                id
                 name
                 status
             }
