@@ -1,6 +1,7 @@
 import singleProject from "./fetchData/singleProject.js";
 import singleClient from "./fetchData/singleClient.js";
 import updateProject from "./mutateData/updateProject.js";
+import deleteProject from "./mutateData/deleteProject.js";
 
 const titleInput = document.querySelector('.title');
 const descriptionInput = document.querySelector('.description');
@@ -10,6 +11,7 @@ const title = document.querySelector('#projectInputName');
 const desc = document.querySelector('#projectTextarea1');
 const status = document.querySelector('.status-select');
 const updateBtn = document.querySelector('.updatebtn');
+const deleteBtn = document.querySelector('.deleteProject');
 
 let query = location.href.split('?')[1];
 let id = query.split('=')[1];
@@ -50,6 +52,12 @@ updateBtn.addEventListener('click',async (e)=>{
     const updatedProject = await updateProject(id,title.value,desc.value,status.value);
     alert('Project Details Updated');
     location.reload();
+})
+
+deleteBtn.addEventListener('click',async()=>{
+    const deletedProject = await deleteProject(id);
+    alert("Project Deleted");
+    location.href='http://127.0.0.1:5500/client/index.html';
 })
 start();
 
