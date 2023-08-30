@@ -22,7 +22,7 @@ const fetchClients = async () => {
             throw new Error('Failed!');
         }
         const resData = await response.json();
-        return resData;
+        return resData.data.clients;
 
     } catch (err) {
         console.log(err);
