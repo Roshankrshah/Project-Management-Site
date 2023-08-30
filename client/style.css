@@ -6,3 +6,9 @@
 .add-btn{
     margin: 20px 10px 20px 100px;
 }
+
+.table-container{
+    margin: 10px 100px 10px 100px;
+    max-width: 100%;
+    overflow-x: auto;
+}
