@@ -28,26 +28,21 @@ const start = async()=>{
     table.classList.add('client-table');
     table.innerHTML = `
         <tr>
-            <td>${clientDetails.name}</td>
+            <td><span><i class="fa-solid fa-user"></i> </span>${clientDetails.name}</td>
         </tr>
         <tr>
-            <td>${clientDetails.email}</td>
+            <td><span><i class="fa-solid fa-envelope"></i> </span>${clientDetails.email}</td>
         </tr>
         <tr>
-            <td>${clientDetails.phone}</td>
+            <td><span><i class="fa-solid fa-phone"></i> </span>${clientDetails.phone}</td>
         </tr>
     </table>`;
     client.appendChild(table);
 
     title.setAttribute('value',`${projectDetails.name}`);
     desc.textContent = `${projectDetails.description}`;
-    /*const option = document.createElement('option');
-    option.setAttribute('selected','selected');
-    option.textContent = `${projectDetails.status}`;
-    status.prepend(option);*/
     status.forEach((option)=>{
         if(option.textContent === `${projectDetails.status}`){
-            //status.value = `${projectDetails.status}`;
             option.setAttribute('selected','selected');
         }
     })
@@ -57,7 +52,7 @@ updateBtn.addEventListener('click',async (e)=>{
     e.preventDefault();
     const updatedProject = await updateProject(id,title.value,desc.value,status.value);
     alert('Project Details Updated');
-    //location.reload();
+    location.reload();
 })
 
 deleteBtn.addEventListener('click',async()=>{
