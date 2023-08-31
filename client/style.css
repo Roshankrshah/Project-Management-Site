@@ -88,12 +88,15 @@
 }
 
 .deleteProject {
-    position: absolute;
-    top: 650px;
-    right: 10px;
+    position: relative;
+    left:480px;
 }
 
 .client-table {
     border-collapse: collapse;
     width: 300px;
+}
+
+.clientDetails{
+    margin-bottom: 20px;
 }

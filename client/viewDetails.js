@@ -9,7 +9,7 @@ const statusInput = document.querySelector('.status');
 const client = document.querySelector('.clientDetails');
 const title = document.querySelector('#projectInputName');
 const desc = document.querySelector('#projectTextarea1');
-const status = document.querySelector('.status-select');
+const status = document.querySelectorAll('.status-select option');
 const updateBtn = document.querySelector('.updatebtn');
 const deleteBtn = document.querySelector('.deleteProject');
 
@@ -41,17 +41,23 @@ const start = async()=>{
 
     title.setAttribute('value',`${projectDetails.name}`);
     desc.textContent = `${projectDetails.description}`;
-    const option = document.createElement('option');
+    /*const option = document.createElement('option');
     option.setAttribute('selected','selected');
     option.textContent = `${projectDetails.status}`;
-    status.prepend(option) 
+    status.prepend(option);*/
+    status.forEach((option)=>{
+        if(option.textContent === `${projectDetails.status}`){
+            //status.value = `${projectDetails.status}`;
+            option.setAttribute('selected','selected');
+        }
+    })
 }
 
 updateBtn.addEventListener('click',async (e)=>{
     e.preventDefault();
     const updatedProject = await updateProject(id,title.value,desc.value,status.value);
     alert('Project Details Updated');
-    location.reload();
+    //location.reload();
 })
 
 deleteBtn.addEventListener('click',async()=>{
