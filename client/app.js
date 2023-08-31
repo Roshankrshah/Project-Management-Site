@@ -18,7 +18,7 @@ const start = async () => {
                     <td>${client.name}</td>
                     <td>${client.email}</td>
                     <td>${client.phone}</td>
-                    <td><button class="delete-button" data-id="${client.id}">Delete</button></td>
+                    <td><button class="delete-button" data-id="${client.id}"><span><i class="fa-solid fa-trash-can"></i> </span>Delete</button></td>
                 </tr>`
     }).join('');
 
