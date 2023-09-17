@@ -58,7 +58,7 @@ updateBtn.addEventListener('click',async (e)=>{
 deleteBtn.addEventListener('click',async()=>{
     const deletedProject = await deleteProject(id);
     alert("Project Deleted");
-    location.href='http://127.0.0.1:5500/client/index.html';
+    location.href='/client/index.html';
 })
 start();
 
